@@ -8,8 +8,7 @@ fun main() {
 }
 
 fun getSumOfPossibleGameIDs(filename: String) :Int {
-    val data = File(filename).readText().trim()
-    val list = data.split("\n")
+    val list = File(filename).readLines()
     val list2 = list.map { it.split(":")[1] }
     val list3 = list2.map { it.split(";").map { it.trim() } }
     val games = list3.map { it.map { it.split(",").map { it.trim().split(" ") } } }
@@ -45,8 +44,7 @@ fun getSumOfPossibleGameIDs(filename: String) :Int {
 }
 
 fun getSumOfPowers(filename: String): Int {
-    val data = File(filename).readText().trim()
-    val list = data.split("\n")
+    val list = File(filename).readLines()
     val list2 = list.map { it.split(":")[1] }
     val list3 = list2.map { it.split(";").map { it.trim() } }
     val games = list3.map { it.map { it.split(",").map { it.trim().split(" ") } } }

@@ -8,8 +8,7 @@ fun main() {
 }
 
 fun getSumOfCalibrationValues(filename : String) : Int {
-    val data = File(filename).readText().trim()
-    val list = data.split("\n")
+    val list = File(filename).readLines()
 
     var sum = 0
 
@@ -39,8 +38,7 @@ fun getSumOfCalibrationValues(filename : String) : Int {
 }
 
 fun getSumOfCalibrationValuesWithWords(filename: String) : Int {
-    val data = File(filename).readText().trim()
-    val list = data.split("\n")
+    val list = File(filename).readLines()
 
     var sum = 0
 
@@ -70,7 +68,7 @@ fun getSumOfCalibrationValuesWithWords(filename: String) : Int {
             if (line[j].isDigit()) {
                 if (j < indexOfCurrentFirstNumber) {
                     currentFirstNumber = line[j].toString().toInt()
-                    indexOfCurrentFirstNumber = j
+                    //indexOfCurrentFirstNumber = j
                 }
                 if (j > indexOfCurrentLastNumber) {
                     currentLastNumber = line[j].toString().toInt()
